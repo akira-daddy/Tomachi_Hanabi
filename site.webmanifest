@@ -1,0 +1,13 @@
+{
+  "name": "とおまち夏花火ナイト",
+  "short_name": "とおまち花火",
+  "description": "とおまち観光協会が贈る夏の花火大会。混みすぎない、ちょうどいい賑わい。",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFF6E5",
+  "theme_color": "#1B2A4A",
+  "icons": [
+    { "src": "images/favicon/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "images/favicon/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find \"C:/Users/shira/Documents/Personal/WEBデザイン/とおまち夏花火/実装プロンプト/Tomachi_natsu_hanabi_v1.0\" -type d 2>/dev/null; echo \"---\"; find \"C:/Users/shira/Documents/Personal/WEBデザイン/とおまち夏花火/実装プロンプト/Tomachi_natsu_hanabi_v1.0/images\" -type f 2>/dev/null)",
+      "Bash(find \"C:/Users/shira/Downloads\" -maxdepth 1 -newermt \"2026-07-13\" -iname \"*.png\" -o -maxdepth 1 -newermt \"2026-07-13\" -iname \"*.jpg\" 2>/dev/null | head -50)",
+      "Bash(python3 -c \"from PIL import Image; im=Image.open\\(r'C:/Users/shira/Downloads/image.png'\\); print\\(im.size\\)\")",
+      "Bash(python -c \"from PIL import Image; im=Image.open\\(r'C:/Users/shira/Downloads/image.png'\\); print\\(im.size\\)\")",
+      "Bash(find \"C:/Users/shira\" -maxdepth 6 \\\\\\( -iname \"*.png\" -o -iname \"*.jpg\" -o -iname \"*.jpeg\" -o -iname \"*.webp\" \\\\\\) -newermt \"2026-07-14\" 2>/dev/null | grep -v -i \"node_modules\\\\|AppData/Local/Packages\\\\|\\\\.claude/projects\" | head -80)",
+      "Bash(python -c \"from PIL import Image; im=Image.open\\(r'C:/Users/shira/Documents/Personal/WEBデザイン/とおまち夏花火/実装プロンプト/Tomachi_natsu_hanabi_v1.0/ChatGPT Image 2026年7月14日 17_22_57.png'\\); print\\(im.size\\)\")",
+      "Bash(python3)",
+      "Bash(python3 -c \"import PIL, numpy; print\\('ok'\\)\")",
+      "Bash(python -c \"import PIL, numpy; print\\('ok'\\)\")",
+      "Bash(python)",
+      "Bash(cp \"images_org/mascot/Natsuki_stand.png\" \"images/mascot/natsuki_stand.png\")",
+      "Bash(cp \"images/stay/stay_ryokan.jpg\" \"images/stay/stay_teaser_thumb.jpg\")"
+    ]
+  }
+}

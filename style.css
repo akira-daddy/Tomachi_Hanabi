@@ -1,0 +1,1176 @@
+/* ==========================================================================
+   とおまち夏花火ナイト LP - style.css
+   ========================================================================== */
+
+:root {
+  --color-primary: #1B2A4A;
+  --color-secondary: #FFF6E5;
+  --color-accent: #E8633C;
+  --color-text: #333333;
+  --color-gold: #C9A961;
+  --color-line: #06C755;
+  --color-line-dark: #05A648;
+
+  --font-display: "Shippori Mincho", serif;
+  --font-body: "Noto Sans JP", sans-serif;
+
+  --section-pad-y: 64px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --shadow-soft: 0 8px 24px rgba(27, 42, 74, 0.12);
+  --shadow-btn: 0 6px 16px rgba(232, 99, 60, 0.35);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-secondary);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; text-decoration: none; }
+
+ul { list-style: none; margin: 0; padding: 0; }
+
+.section { padding: var(--section-pad-y) 20px; position: relative; }
+.section__inner { max-width: 720px; margin: 0 auto; }
+
+.section__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.5;
+  color: var(--color-primary);
+  text-align: center;
+  margin: 0 0 32px;
+}
+
+.section__lead {
+  text-align: center;
+  font-size: 15px;
+  color: var(--color-text);
+  margin: -16px 0 32px;
+}
+
+/* ==========================================================================
+   ボタン共通
+   ========================================================================== */
+
+.btn {
+  display: inline-block;
+  text-align: center;
+  padding: 16px 24px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  border: none;
+}
+.btn:hover { transform: scale(1.03); }
+
+.js-open-reservation {
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.btn--full { width: 100%; }
+.btn--large { padding: 18px 28px; font-size: 17px; }
+
+.btn--primary {
+  background: var(--color-accent);
+  color: #fff;
+  box-shadow: var(--shadow-btn);
+}
+
+.btn--line {
+  background: var(--color-line);
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(6, 199, 85, 0.3);
+}
+
+.btn--line-outline {
+  background: rgba(6, 199, 85, 0.85);
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  padding: 14px 22px;
+  font-size: 15px;
+}
+
+/* ==========================================================================
+   sticky CTAバー
+   ========================================================================== */
+
+.sticky-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  gap: 8px;
+  padding: 10px 14px;
+  padding-bottom: max(10px, env(safe-area-inset-bottom));
+  background: rgba(27, 42, 74, 0.96);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  pointer-events: none;
+}
+
+.sticky-cta.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.sticky-cta__btn {
+  flex: 1;
+  text-align: center;
+  padding: 12px 8px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.sticky-cta__btn--primary {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.sticky-cta__btn--line {
+  background: var(--color-line);
+  color: #fff;
+}
+
+/* ==========================================================================
+   ① HERO
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(180deg, #0F1B33 0%, var(--color-primary) 55%, #24314F 100%);
+  padding: 100px 20px 48px;
+}
+
+.hero__bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+.hero__bg-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  opacity: 1;
+  filter: brightness(0.92) saturate(1.08);
+}
+
+.hero__bg-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(15, 27, 51, 0.55) 0%, rgba(15, 27, 51, 0.15) 28%, rgba(15, 27, 51, 0.3) 65%, rgba(15, 27, 51, 0.68) 100%);
+  pointer-events: none;
+}
+
+.hero__fireworks {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+.hero__fireworks-svg { width: 100%; height: 100%; }
+
+.fw { transform-origin: 0 0; }
+.fw--1 { transform: translate(90px, 70px); }
+.fw--2 { transform: translate(300px, 110px); }
+.fw--3 { transform: translate(190px, 40px); }
+
+.fw__spark {
+  fill: #FFF6E5;
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: firework-spark 3.6s ease-out infinite;
+}
+.fw__spark--gold { fill: var(--color-gold); }
+.fw__spark--accent { fill: var(--color-accent); }
+
+.fw--2 .fw__spark { animation-delay: 1.2s; }
+.fw--3 .fw__spark { animation-delay: 2.3s; }
+
+@keyframes firework-spark {
+  0% {
+    opacity: 0;
+    transform: rotate(var(--a)) translateX(0) scale(0.6);
+  }
+  8% { opacity: 1; }
+  55% {
+    opacity: 0.85;
+    transform: rotate(var(--a)) translateX(65px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(var(--a)) translateX(95px) scale(0.7);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fw__spark { animation: none; opacity: 0.6; }
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 3;
+  max-width: 480px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--color-secondary);
+}
+
+.hero__eyebrow {
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: var(--color-gold);
+  margin: 0 0 12px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.hero__title {
+  font-family: var(--font-display);
+  font-size: 30px;
+  line-height: 1.55;
+  font-weight: 700;
+  margin: 0 0 14px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+}
+
+.hero__subtitle {
+  font-size: 16px;
+  color: var(--color-gold);
+  margin: 0 0 28px;
+  letter-spacing: 0.04em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.speech-bubble {
+  background: var(--color-secondary);
+  color: var(--color-text);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  position: relative;
+  box-shadow: var(--shadow-soft);
+}
+
+.speech-bubble p { margin: 0; }
+
+.hero__note {
+  font-size: 14px;
+  color: var(--color-secondary);
+  margin: 0 0 18px;
+}
+
+.hero__cta-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ==========================================================================
+   ② 共感（あるある）
+   ========================================================================== */
+
+.empathy {
+  background: var(--color-secondary);
+  position: relative;
+}
+
+.empathy::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: url("images/bg/bg_pain.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.6;
+}
+
+.empathy__bg-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(255, 246, 229, 0) 0%, var(--color-secondary) 100%);
+  pointer-events: none;
+}
+
+.empathy .section__inner {
+  position: relative;
+  z-index: 2;
+}
+
+.pain-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.pain-list__item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  box-shadow: var(--shadow-soft);
+}
+
+.pain-list__icon {
+  flex: none;
+  width: 40px;
+  height: 40px;
+}
+
+.pain-list__icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.pain-list__text {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.mascot-block {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.mascot-block__img {
+  width: 120px;
+  flex: none;
+  border-radius: var(--radius-md);
+}
+
+.mascot-block .speech-bubble {
+  flex: 1;
+}
+
+.mascot-block--worried .speech-bubble {
+  background: #fff;
+}
+
+/* ==========================================================================
+   ③ 解決
+   ========================================================================== */
+
+.solution {
+  background: var(--color-primary);
+  color: var(--color-secondary);
+  position: relative;
+}
+
+.solution::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: url("images/bg/bg_solution.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.6;
+}
+
+.solution__bg-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(27, 42, 74, 0) 0%, var(--color-primary) 100%);
+  pointer-events: none;
+}
+
+.solution .section__inner {
+  position: relative;
+  z-index: 2;
+}
+
+.solution .section__title {
+  color: var(--color-secondary);
+}
+
+.solution .mascot-block {
+  margin-bottom: 32px;
+}
+
+.solution .speech-bubble {
+  background: var(--color-secondary);
+  color: var(--color-text);
+}
+
+.feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.feature-list__item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(255, 246, 229, 0.1);
+  border: 1px solid rgba(201, 169, 97, 0.4);
+  border-radius: var(--radius-md);
+  padding: 16px;
+}
+
+.feature-list__icon {
+  flex: none;
+  width: 36px;
+  height: 36px;
+}
+
+.feature-list__icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.feature-list__text {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-secondary);
+}
+
+/* ==========================================================================
+   ④ 観覧のご案内
+   ========================================================================== */
+
+.viewing {
+  background: var(--color-primary);
+  position: relative;
+}
+
+.viewing::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: url("images/bg/bg_invitation.png");
+  background-size: cover;
+  background-position: center 30%;
+  opacity: 0.65;
+}
+
+.viewing__bg-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(27, 42, 74, 0.35) 0%, var(--color-primary) 85%);
+  pointer-events: none;
+}
+
+.viewing .section__inner {
+  position: relative;
+  z-index: 2;
+}
+
+.viewing .section__title { color: var(--color-secondary); }
+
+.viewing__lead {
+  text-align: center;
+  font-size: 15px;
+  margin: -16px 0 28px;
+  color: var(--color-secondary);
+}
+
+.viewing-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.viewing-card {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: 24px 20px;
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+}
+
+.viewing-card--paid {
+  border: 2px solid var(--color-accent);
+}
+
+.viewing-card__badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+.viewing-card__badge--free { background: #EDEDED; color: var(--color-text); }
+.viewing-card__badge--paid { background: var(--color-accent); color: #fff; }
+
+.viewing-card__title {
+  font-family: var(--font-display);
+  font-size: 19px;
+  color: var(--color-primary);
+  margin: 0 0 8px;
+}
+
+.viewing-card__price {
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--color-accent);
+  margin: 0 0 12px;
+}
+.viewing-card__price span { font-size: 13px; font-weight: 500; color: var(--color-text); }
+
+.viewing-card__desc {
+  font-size: 14px;
+  margin: 0 0 16px;
+}
+
+.viewing-card__micro {
+  font-size: 13px;
+  color: var(--color-text);
+  margin: 0 0 10px;
+  font-weight: 700;
+}
+
+.viewing-card__link {
+  font-size: 14px;
+  color: var(--color-primary);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   ⑤ 来場シーン紹介＋宿泊ミニ先出し
+   ========================================================================== */
+
+.scenes { background: #fff; }
+
+.scene-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+.scene-card { border-radius: var(--radius-md); }
+.scene-card__media { position: relative; overflow: hidden; border-radius: var(--radius-md); }
+.scene-card__img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block; }
+.scene-card__label {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  margin: 0;
+  padding: 8px 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(0deg, rgba(27,42,74,0.85), transparent);
+}
+
+.scene-card__desc {
+  margin: 8px 2px 0;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+.mascot-block--excited { margin-bottom: 32px; }
+.scenes .speech-bubble { background: var(--color-secondary); }
+
+.stay-teaser {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--color-secondary);
+  border-radius: var(--radius-md);
+  padding: 14px;
+}
+.stay-teaser__thumb { width: 84px; height: 84px; object-fit: cover; border-radius: var(--radius-md); flex: none; }
+.stay-teaser__copy { margin: 0 0 6px; font-size: 14px; font-weight: 700; color: var(--color-primary); }
+.stay-teaser__link { font-size: 14px; color: var(--color-accent); font-weight: 700; text-decoration: underline; }
+
+/* ==========================================================================
+   ⑥ 宿泊施設紹介
+   ========================================================================== */
+
+.stay { background: var(--color-secondary); }
+
+.stay-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.stay-card {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+}
+.stay-card__img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+.stay-card__name {
+  font-family: var(--font-display);
+  font-size: 17px;
+  color: var(--color-primary);
+  margin: 14px 16px 4px;
+}
+.stay-card__price { font-size: 13px; color: var(--color-text); margin: 0 16px 8px; }
+.stay-card__comment { font-size: 14px; margin: 0 16px 16px; }
+
+.stay-cta {
+  text-align: center;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: 24px 20px;
+  box-shadow: var(--shadow-soft);
+}
+
+.stay-cta__checklist {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 14px;
+}
+
+.stay-cta__video {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  margin: 0 auto 14px;
+  border-radius: var(--radius-md);
+}
+
+/* ==========================================================================
+   ⑦ 町紹介
+   ========================================================================== */
+
+.town { background: #fff; }
+
+.town-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  max-width: 480px;
+  margin: 0 auto 28px;
+  justify-content: center;
+}
+.town-gallery__img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: var(--radius-md); }
+
+.access-info {
+  background: var(--color-secondary);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  margin-bottom: 20px;
+  scroll-margin-top: 20px;
+}
+.access-info__title {
+  font-family: var(--font-display);
+  font-size: 17px;
+  color: var(--color-primary);
+  margin: 0 0 12px;
+}
+.access-info__map { border-radius: var(--radius-md); margin-bottom: 14px; }
+.access-info__list { display: flex; flex-direction: column; gap: 8px; font-size: 14px; }
+.access-info__list li { padding-left: 1em; position: relative; }
+.access-info__list li::before { content: "・"; position: absolute; left: 0; }
+
+.town__more-link {
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  color: var(--color-primary);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   ⑧ ベネフィット
+   ========================================================================== */
+
+.benefit {
+  background: var(--color-primary);
+  color: var(--color-secondary);
+  text-align: center;
+}
+.benefit .section__title { color: var(--color-secondary); margin-bottom: 20px; }
+.benefit__text { font-size: 15px; color: rgba(255,246,229,0.85); margin: 0; }
+
+/* ==========================================================================
+   ⑨ お客様の声
+   ========================================================================== */
+
+.voice { background: var(--color-secondary); }
+
+.voice .mascot-block { margin-bottom: 32px; }
+.voice .speech-bubble { background: #fff; }
+
+.voice-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.voice-card {
+  background: #fff;
+  border-radius: var(--radius-md);
+  padding: 18px;
+  box-shadow: var(--shadow-soft);
+}
+.voice-card__text { font-size: 14px; margin: 0 0 10px; }
+.voice-card__attr { font-size: 12px; color: var(--color-gold); font-weight: 700; margin: 0; }
+
+/* ==========================================================================
+   ⑩ グルメ紹介
+   ========================================================================== */
+
+.gourmet { background: #fff; }
+
+.gourmet-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.gourmet-card { text-align: left; }
+.gourmet-card__img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: var(--radius-md); margin-bottom: 8px; }
+.gourmet-card__genre { font-size: 11px; color: var(--color-accent); font-weight: 700; margin: 0 0 2px; }
+.gourmet-card__name { font-family: var(--font-display); font-size: 14px; color: var(--color-primary); margin: 0; }
+
+/* ==========================================================================
+   ⑪ ギャラリー
+   ========================================================================== */
+
+.gallery { background: var(--color-secondary); }
+
+.gallery-scroll {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 8px;
+  -webkit-overflow-scrolling: touch;
+}
+.gallery-scroll__img {
+  flex: none;
+  width: 62%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  scroll-snap-align: start;
+}
+
+/* ==========================================================================
+   ⑫ FAQ
+   ========================================================================== */
+
+.faq { background: #fff; }
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.faq-item {
+  background: var(--color-secondary);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+}
+
+.faq-item--open .faq-item__q {
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: 0 0 8px;
+}
+.faq-item.faq-item--open .faq-item__a {
+  margin: 0;
+  font-size: 14px;
+  max-height: none;
+  overflow: visible;
+}
+
+.faq-item__q--toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: none;
+  border: none;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-align: left;
+  padding: 0;
+  cursor: pointer;
+}
+
+.faq-item__icon {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  position: relative;
+}
+.faq-item__icon::before,
+.faq-item__icon::after {
+  content: "";
+  position: absolute;
+  background: var(--color-primary);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+.faq-item__icon::before { width: 14px; height: 2px; }
+.faq-item__icon::after { width: 2px; height: 14px; transition: transform 0.2s ease; }
+
+.faq-item__q--toggle[aria-expanded="true"] .faq-item__icon::after { transform: translate(-50%, -50%) rotate(90deg) scaleX(0); }
+
+.faq-item .faq-item__a {
+  font-size: 14px;
+  margin: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, margin-top 0.3s ease;
+}
+
+.faq-item__q--toggle[aria-expanded="true"] + .faq-item__a {
+  max-height: 300px;
+  margin-top: 10px;
+}
+
+.faq__reserve-btn { margin-bottom: 18px; }
+
+.faq__line-link {
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  color: var(--color-line-dark);
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   ⑬ 最終CTA
+   ========================================================================== */
+
+.final-cta {
+  background: linear-gradient(180deg, var(--color-primary), #0F1B33);
+  color: var(--color-secondary);
+  text-align: center;
+  padding-bottom: 96px;
+}
+
+.final-cta__mascot {
+  display: block;
+  width: 140px;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  margin: 0 auto 16px;
+  border-radius: var(--radius-md);
+}
+
+.final-cta__title {
+  font-family: var(--font-display);
+  font-size: 24px;
+  line-height: 1.6;
+  color: var(--color-secondary);
+  margin: 0 0 24px;
+}
+
+.final-cta__reassure {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--color-gold);
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.final-cta__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ==========================================================================
+   フッター
+   ========================================================================== */
+
+.footer {
+  background: #0F1B33;
+  color: rgba(255,246,229,0.6);
+  text-align: center;
+  padding: 24px 20px;
+  font-size: 12px;
+}
+.footer__text { margin: 0; }
+
+/* ==========================================================================
+   PCレイアウト（768px〜）
+   ========================================================================== */
+
+@media (min-width: 768px) {
+  :root { --section-pad-y: 96px; }
+
+  .section__title { font-size: 32px; }
+
+  .hero__title { font-size: 42px; }
+  .hero__cta-group { flex-direction: row; justify-content: center; }
+  .hero__cta-group .btn { flex: 1; max-width: 320px; }
+
+  .pain-list { flex-direction: row; }
+  .pain-list__item { flex: 1; flex-direction: column; text-align: center; }
+
+  .feature-list { flex-direction: row; flex-wrap: wrap; }
+  .feature-list__item { flex: 1 1 45%; }
+
+  .viewing-cards { flex-direction: row; }
+  .viewing-card { flex: 1; }
+
+  .scene-cards { grid-template-columns: repeat(4, 1fr); }
+
+  .stay-cards { flex-direction: row; }
+  .stay-card { flex: 1; }
+
+  .town-gallery { grid-template-columns: repeat(2, 1fr); max-width: 640px; }
+
+  .voice-list { flex-direction: row; flex-wrap: wrap; }
+  .voice-card { flex: 1 1 45%; }
+
+  .gourmet-grid { grid-template-columns: repeat(3, 1fr); }
+
+  .gallery-scroll__img { width: 30%; }
+
+  .final-cta__reassure { flex-direction: row; justify-content: center; gap: 24px; }
+  .final-cta__buttons { flex-direction: row; justify-content: center; }
+  .final-cta__buttons .btn { flex: none; min-width: 260px; }
+
+  .sticky-cta { max-width: 480px; left: 50%; transform: translate(-50%, 20px); border-radius: 16px 16px 0 0; }
+  .sticky-cta.is-visible { transform: translate(-50%, 0); }
+}
+/* ==========================================================================
+   観覧席予約モーダル
+   ========================================================================== */
+
+.reservation-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+}
+
+.reservation-modal.is-open { display: block; }
+
+.reservation-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(27, 42, 74, 0.55);
+  backdrop-filter: blur(2px);
+}
+
+.reservation-modal__panel {
+  position: relative;
+  z-index: 1;
+  max-width: 480px;
+  margin: 32px auto;
+  max-height: calc(100vh - 64px);
+  overflow-y: auto;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: 32px 24px 28px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.reservation-modal__close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: var(--color-secondary);
+  color: var(--color-primary);
+  border-radius: 50%;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.reservation-modal__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--color-primary);
+  text-align: center;
+  margin: 0 0 8px;
+}
+
+.reservation-modal__lead {
+  text-align: center;
+  font-size: 13px;
+  color: var(--color-text);
+  margin: 0 0 24px;
+}
+
+.rf-field {
+  margin-bottom: 18px;
+}
+
+.rf-field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 6px;
+}
+
+.rf-required {
+  display: inline-block;
+  margin-left: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--color-accent);
+  border-radius: 4px;
+  padding: 1px 6px;
+  vertical-align: middle;
+}
+
+.rf-field input[type="text"],
+.rf-field input[type="email"],
+.rf-field input[type="tel"],
+.rf-field input[type="number"],
+.rf-field textarea {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 15px;
+  padding: 12px 14px;
+  border: 1px solid #d8d2c4;
+  border-radius: 8px;
+  background: var(--color-secondary);
+  color: var(--color-text);
+}
+
+.rf-field input:focus,
+.rf-field textarea:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
+}
+
+.rf-field input.is-invalid,
+.rf-field textarea.is-invalid {
+  outline: 2px solid #d64545;
+  border-color: #d64545;
+}
+
+.rf-field textarea { resize: vertical; }
+
+.rf-error {
+  margin: 6px 0 0;
+  font-size: 12px;
+  color: #d64545;
+  min-height: 14px;
+}
+
+.rf-field--checkbox { margin-bottom: 10px; }
+
+.rf-checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.rf-checkbox-label input[type="checkbox"] {
+  margin-top: 3px;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.rf-checkbox-label a { color: var(--color-accent); text-decoration: underline; }
+
+.rf-submit-error {
+  margin: 0 0 14px;
+  font-size: 13px;
+  color: #d64545;
+  text-align: center;
+  min-height: 0;
+}
+
+.rf-submit-error:empty { display: none; }
+
+#rfSubmitBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.reservation-modal__body--done {
+  text-align: center;
+  padding: 20px 4px;
+}
+
+.rf-done__icon {
+  width: 56px;
+  height: 56px;
+  line-height: 56px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: #fff;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.rf-done__text {
+  font-size: 14px;
+  color: var(--color-text);
+  margin: 0 0 24px;
+}
+
+body.modal-open { overflow: hidden; }

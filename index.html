@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>とおまち夏花火ナイト｜ふらっと寄れる、夏のいちばん</title>
+
+<!-- ============ SEO ============ -->
+<!-- ▼公開URLが決まったら、下記の【ここにドメイン】をすべて実際のURLに置き換えてください -->
+<meta name="description" content="とおまち観光協会が贈る夏の花火大会。混みすぎない、ちょうどいい賑わい。有料観覧席は先着受付中、宿泊はLINEで気軽に相談できます。">
+<meta name="robots" content="index, follow">
+<meta name="author" content="とおまち観光協会">
+<link rel="canonical" href="https://【ここにドメイン】/">
+
+<!-- ============ OGP（Facebook / LINE / Slackなど） ============ -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="とおまち夏花火ナイト">
+<meta property="og:title" content="とおまち夏花火ナイト｜ふらっと寄れる、夏のいちばん">
+<meta property="og:description" content="混みすぎない、ちょうどいい賑わいの夏花火。有料観覧席は先着受付中、宿泊はLINEで気軽に相談できます。">
+<meta property="og:url" content="https://【ここにドメイン】/">
+<meta property="og:image" content="https://【ここにドメイン】/images/ogp/ogp_image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ja_JP">
+
+<!-- ============ Twitter Card ============ -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="とおまち夏花火ナイト｜ふらっと寄れる、夏のいちばん">
+<meta name="twitter:description" content="混みすぎない、ちょうどいい賑わいの夏花火。有料観覧席は先着受付中、宿泊はLINEで気軽に相談できます。">
+<meta name="twitter:image" content="https://【ここにドメイン】/images/ogp/ogp_image.jpg">
+
+<!-- ============ ファビコン ============ -->
+<link rel="icon" href="images/favicon/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="images/favicon/favicon.ico" sizes="any">
+<link rel="icon" href="images/favicon/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="images/favicon/favicon-16.png" type="image/png" sizes="16x16">
+<link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#1B2A4A">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ sticky CTAバー（全セクション共通） ============ -->
+<div class="sticky-cta" id="stickyCta" aria-hidden="true">
+  <button type="button" class="sticky-cta__btn sticky-cta__btn--primary js-open-reservation">観覧席を予約する</button>
+  <a href="#stay" class="sticky-cta__btn sticky-cta__btn--line">LINEで宿を相談する</a>
+</div>
+
+<!-- ============ ① HERO ============ -->
+<header class="hero" id="hero">
+  <div class="hero__bg">
+    <video
+      class="hero__bg-video"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+      poster="images/hero/hero_bg_sp.jpg"
+      aria-hidden="true">
+      <source src="videos/hero_bg.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero__bg-overlay" aria-hidden="true"></div>
+  <div class="hero__fireworks" aria-hidden="true">
+    <svg viewBox="0 0 400 300" class="hero__fireworks-svg">
+      <g class="fw fw--1">
+        <circle cx="0" cy="0" r="2.5" class="fw__spark" style="--a:0deg"></circle>
+        <circle cx="0" cy="0" r="2.5" class="fw__spark" style="--a:30deg"></circle>
+        <circle cx="0" cy="0" r="2.5" class="fw__spark" style="--a:60deg"></circle>
+        <circle cx="0" cy="0" r="2.5" class="fw__spark" style="--a:90deg"></circle>
+        <circle cx="0" cy="0" r="2.5" class="fw__spark" style="--a:120deg"></circle>
+        <circle cx="0" cy="0" r="2.5" class="fw__spark" style="--a:150deg"></circle>
+        <circle cx="0" cy="0" r="2.5" class="fw__spark" style="--a:180deg"></circle>
+        <circle cx="0" cy="0" r="2.5" class="fw__spark" style="--a:210deg"></circle>
+        <circle cx="0" cy="0" r="2.5" class="fw__spark" style="--a:240deg"></circle>
+        <circle cx="0" cy="0" r="2.5" class="fw__spark" style="--a:270deg"></circle>
+        <circle cx="0" cy="0" r="2.5" class="fw__spark" style="--a:300deg"></circle>
+        <circle cx="0" cy="0" r="2.5" class="fw__spark" style="--a:330deg"></circle>
+      </g>
+      <g class="fw fw--2">
+        <circle cx="0" cy="0" r="2" class="fw__spark fw__spark--gold" style="--a:0deg"></circle>
+        <circle cx="0" cy="0" r="2" class="fw__spark fw__spark--gold" style="--a:45deg"></circle>
+        <circle cx="0" cy="0" r="2" class="fw__spark fw__spark--gold" style="--a:90deg"></circle>
+        <circle cx="0" cy="0" r="2" class="fw__spark fw__spark--gold" style="--a:135deg"></circle>
+        <circle cx="0" cy="0" r="2" class="fw__spark fw__spark--gold" style="--a:180deg"></circle>
+        <circle cx="0" cy="0" r="2" class="fw__spark fw__spark--gold" style="--a:225deg"></circle>
+        <circle cx="0" cy="0" r="2" class="fw__spark fw__spark--gold" style="--a:270deg"></circle>
+        <circle cx="0" cy="0" r="2" class="fw__spark fw__spark--gold" style="--a:315deg"></circle>
+      </g>
+      <g class="fw fw--3">
+        <circle cx="0" cy="0" r="2" class="fw__spark fw__spark--accent" style="--a:0deg"></circle>
+        <circle cx="0" cy="0" r="2" class="fw__spark fw__spark--accent" style="--a:40deg"></circle>
+        <circle cx="0" cy="0" r="2" class="fw__spark fw__spark--accent" style="--a:80deg"></circle>
+        <circle cx="0" cy="0" r="2" class="fw__spark fw__spark--accent" style="--a:120deg"></circle>
+        <circle cx="0" cy="0" r="2" class="fw__spark fw__spark--accent" style="--a:160deg"></circle>
+        <circle cx="0" cy="0" r="2" class="fw__spark fw__spark--accent" style="--a:200deg"></circle>
+        <circle cx="0" cy="0" r="2" class="fw__spark fw__spark--accent" style="--a:240deg"></circle>
+        <circle cx="0" cy="0" r="2" class="fw__spark fw__spark--accent" style="--a:280deg"></circle>
+        <circle cx="0" cy="0" r="2" class="fw__spark fw__spark--accent" style="--a:320deg"></circle>
+      </g>
+    </svg>
+  </div>
+
+  <div class="hero__inner">
+    <p class="hero__eyebrow">とおまち観光協会 presents</p>
+    <h1 class="hero__title">今年の夏、<br>まだ予定決まってない人へ。</h1>
+    <p class="hero__subtitle">ふらっと寄れる、夏のいちばん。</p>
+
+    <p class="hero__note">予約なしでも楽しめます。ゆったり見るなら有料観覧席（先着受付中）</p>
+
+    <div class="hero__cta-group">
+      <button type="button" class="btn btn--primary btn--large js-open-reservation">観覧席を予約する（有料観覧席 ¥1,500）</button>
+      <a href="#stay" class="btn btn--line-outline">LINEで宿を相談する</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ ② 共感（あるある） ============ -->
+  <section class="section empathy" id="empathy">
+    <div class="empathy__bg-overlay" aria-hidden="true"></div>
+    <div class="section__inner">
+      <h2 class="section__title">こんな夏になってませんか？</h2>
+
+      <ul class="pain-list">
+        <li class="pain-list__item">
+          <span class="pain-list__icon" aria-hidden="true">
+            <img src="images/icons/icon_crowd_pain.png" alt="人混み">
+          </span>
+          <p class="pain-list__text">花火大会は、どこも人混みで疲れそう。</p>
+        </li>
+        <li class="pain-list__item">
+          <span class="pain-list__icon" aria-hidden="true">
+            <img src="images/icons/icon_repeat_pain.png" alt="毎年同じ">
+          </span>
+          <p class="pain-list__text">気づけば毎年、同じような夏を過ごしている。</p>
+        </li>
+        <li class="pain-list__item">
+          <span class="pain-list__icon" aria-hidden="true">
+            <img src="images/icons/icon_travel_pain.png" alt="移動疲れ">
+          </span>
+          <p class="pain-list__text">遠出はしたいけど、移動だけで疲れちゃう。</p>
+        </li>
+      </ul>
+
+      <div class="mascot-block mascot-block--worried">
+        <img src="images/mascot/natsuki_worried.png" alt="マスコットキャラクターなつきが困り顔で苦笑いしている" class="mascot-block__img">
+        <div class="speech-bubble speech-bubble--worried">
+          <p>わかる〜。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ③ 解決 ============ -->
+  <section class="section solution" id="solution">
+    <div class="solution__bg-overlay" aria-hidden="true"></div>
+    <div class="section__inner">
+      <h2 class="section__title">とおまちなら、<br>ちょうどいい夏がある。</h2>
+
+      <div class="mascot-block mascot-block--relaxed">
+        <img src="images/mascot/natsuki_relaxed.png" alt="マスコットキャラクターなつきが頬杖をついてくつろいでいる" class="mascot-block__img">
+        <div class="speech-bubble speech-bubble--relaxed">
+          <p>混みすぎなくて、ゆっくりできるのがいいんだよね〜。</p>
+        </div>
+      </div>
+
+      <ul class="feature-list">
+        <li class="feature-list__item">
+          <span class="feature-list__icon" aria-hidden="true">
+            <img src="images/icons/icon_crowd_solution.png" alt="ちょうどいい混雑">
+          </span>
+          <p class="feature-list__text">混みすぎない、ちょうどいい規模感</p>
+        </li>
+        <li class="feature-list__item">
+          <span class="feature-list__icon" aria-hidden="true">
+            <img src="images/icons/icon_access_solution.png" alt="アクセスしやすい">
+          </span>
+          <p class="feature-list__text">駅から徒歩圏内でアクセスしやすい</p>
+        </li>
+        <li class="feature-list__item">
+          <span class="feature-list__icon" aria-hidden="true">
+            <img src="images/icons/icon_nightmarket_solution.png" alt="夜店で食べ歩き">
+          </span>
+          <p class="feature-list__text">商店街の夜店で食べ歩きも楽しめる</p>
+        </li>
+        <li class="feature-list__item">
+          <span class="feature-list__icon" aria-hidden="true">
+            <img src="images/icons/icon_paidseat_solution.png" alt="有料観覧席">
+          </span>
+          <p class="feature-list__text">ゆったり見たい人は有料観覧席を事前予約可</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ ④ 観覧のご案内 ============ -->
+  <section class="section viewing" id="viewing">
+    <div class="viewing__bg-overlay" aria-hidden="true"></div>
+    <div class="section__inner">
+      <h2 class="section__title">観覧のご案内</h2>
+      <p class="viewing__lead"><strong>予約なしでも楽しめる。</strong>ゆったり見るなら、事前予約がおすすめです。</p>
+
+      <div class="viewing-cards">
+        <div class="viewing-card">
+          <span class="viewing-card__badge viewing-card__badge--free">予約不要</span>
+          <h3 class="viewing-card__title">通常観覧エリア</h3>
+          <p class="viewing-card__price">入場無料</p>
+          <p class="viewing-card__desc">好きな場所で自由に観覧いただけます。当日ふらっとお越しいただいてもお楽しみいただけます。</p>
+          <a href="#town" class="viewing-card__link">アクセス・持ち物を見る＞</a>
+        </div>
+
+        <div class="viewing-card viewing-card--paid">
+          <span class="viewing-card__badge viewing-card__badge--paid">事前予約制・先着</span>
+          <h3 class="viewing-card__title">有料観覧席</h3>
+          <p class="viewing-card__price">¥1,500<span>（税込）/ 1名</span></p>
+          <p class="viewing-card__desc">前日17時までキャンセル無料。座ってゆったり花火を楽しみたい方におすすめです。</p>
+          <p class="viewing-card__micro">前日17時までキャンセル無料</p>
+          <button type="button" id="openReservationBtn" class="btn btn--primary btn--full js-open-reservation">有料観覧席を申し込む（前日までキャンセル無料）</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ⑤ 来場シーン紹介＋宿泊ミニ先出し ============ -->
+  <section class="section scenes" id="scenes">
+    <div class="section__inner">
+      <h2 class="section__title">とおまちの夏の過ごし方</h2>
+
+      <div class="scene-cards">
+        <div class="scene-card">
+          <div class="scene-card__media">
+            <img src="images/gallery/scene_food_walk.jpg" alt="商店街で食べ歩きを楽しむ様子" class="scene-card__img">
+            <p class="scene-card__label">食べ歩き</p>
+          </div>
+          <p class="scene-card__desc">商店街に並ぶ夜店で、かき氷やみたらし団子を片手にぶらぶら。</p>
+        </div>
+        <div class="scene-card">
+          <div class="scene-card__media">
+            <img src="images/town/scene_yomise.jpg" alt="提灯が並ぶ夜店の様子" class="scene-card__img">
+            <p class="scene-card__label">夜店</p>
+          </div>
+          <p class="scene-card__desc">提灯の灯りに包まれて、射的やヨーヨー釣りも楽しめます。</p>
+        </div>
+        <div class="scene-card">
+          <div class="scene-card__media">
+            <img src="images/gallery/scene_viewing.jpg" alt="川沿いで花火を観覧する人々" class="scene-card__img">
+            <p class="scene-card__label">観覧</p>
+          </div>
+          <p class="scene-card__desc">川沿いに腰を下ろして、頭上いっぱいの花火をのんびり満喫。</p>
+        </div>
+        <div class="scene-card">
+          <div class="scene-card__media">
+            <img src="images/stay/scene_stay.jpg" alt="町内の宿でくつろぐ様子" class="scene-card__img">
+            <p class="scene-card__label">町に泊まる</p>
+          </div>
+          <p class="scene-card__desc">花火の余韻に浸りながら、町内の宿でゆっくり夜を過ごす。</p>
+        </div>
+      </div>
+
+      <div class="mascot-block mascot-block--excited">
+        <img src="images/mascot/natsuki_excited.png" alt="マスコットキャラクターなつきがピースサインで笑顔を見せている" class="mascot-block__img">
+        <div class="speech-bubble speech-bubble--excited">
+          <p>この花火、近くて迫力とおんだよ！</p>
+        </div>
+      </div>
+
+      <div class="stay-teaser">
+        <img src="images/stay/stay_teaser_thumb.jpg" alt="町内の宿泊施設の外観サムネイル" class="stay-teaser__thumb">
+        <div class="stay-teaser__body">
+          <p class="stay-teaser__copy">とおまちに泊まって、翌日ものんびり。</p>
+          <a href="#stay" class="stay-teaser__link">宿を見る＞</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ⑥ 宿泊施設紹介 ============ -->
+  <section class="section stay" id="stay">
+    <div class="section__inner">
+      <h2 class="section__title">町内の宿泊施設</h2>
+      <p class="section__lead">花火のあとは、そのまま町に泊まって、翌日もゆっくり過ごせます。</p>
+
+      <div class="stay-cards">
+        <div class="stay-card">
+          <img src="images/stay/stay_ryokan.jpg" alt="和風旅館の外観" class="stay-card__img">
+          <h3 class="stay-card__name">和風旅館 とおまち庵</h3>
+          <p class="stay-card__price">目安：1泊2食付き ¥9,000〜（施設により異なります）</p>
+          <p class="stay-card__comment">川のせせらぎが聞こえる、落ち着いた佇まいの旅館です。</p>
+        </div>
+        <div class="stay-card">
+          <img src="images/stay/stay_guesthouse.jpg" alt="民宿・ゲストハウスの外観" class="stay-card__img">
+          <h3 class="stay-card__name">ゲストハウス なぎさ</h3>
+          <p class="stay-card__price">目安：1泊2食付き ¥9,000〜（施設により異なります）</p>
+          <p class="stay-card__comment">一人旅や友人グループにも人気の、あたたかみのある宿です。</p>
+        </div>
+        <div class="stay-card">
+          <img src="images/stay/stay_hotel.jpg" alt="小規模ホテルの外観" class="stay-card__img">
+          <h3 class="stay-card__name">ホテルとおまちビュー</h3>
+          <p class="stay-card__price">目安：1泊2食付き ¥9,000〜（施設により異なります）</p>
+          <p class="stay-card__comment">コンパクトながら快適な、カップルにもおすすめのホテルです。</p>
+        </div>
+      </div>
+
+      <div class="stay-cta">
+        <ul class="stay-cta__checklist">
+          <li>✓ 空室確認</li>
+          <li>✓ おすすめ宿紹介</li>
+          <li>✓ プラン相談</li>
+        </ul>
+        <video
+          class="stay-cta__video"
+          src="videos/line_invitation.mp4"
+          autoplay
+          muted
+          loop
+          playsinline
+          aria-label="LINEで宿の相談をご案内する動画"
+        ></video>
+        <a href="#" class="btn btn--line btn--full">LINEで宿を相談する</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ⑦ 町紹介 ============ -->
+  <section class="section town" id="town">
+    <div class="section__inner">
+      <h2 class="section__title">とおまちの町並み</h2>
+      <p class="section__lead">レトロな商店街と、川沿いのゆったりした雰囲気が広がる町です。</p>
+
+      <div class="town-gallery">
+        <img src="images/town/town_shotengai.jpg" alt="レトロな商店街の様子" class="town-gallery__img">
+        <img src="images/town/town_river.jpg" alt="提灯が灯る川沿いの風景" class="town-gallery__img">
+      </div>
+
+      <div class="access-info" id="access">
+        <h3 class="access-info__title">アクセス・持ち物</h3>
+        <img src="images/town/town_map.png" alt="とおまち周辺のアクセスマップ" class="access-info__map">
+        <ul class="access-info__list">
+          <li>最寄り駅から徒歩約10分</li>
+          <li>当日は周辺道路が混雑するため、お車でのご来場はおすすめしておりません</li>
+          <li>持ち物の目安：レジャーシート、うちわ、歩きやすい履物</li>
+        </ul>
+      </div>
+
+      <a href="#stay" class="town__more-link">とおまちについてもっと見る＞</a>
+    </div>
+  </section>
+
+  <!-- ============ ⑧ ベネフィット ============ -->
+  <section class="section benefit" id="benefit">
+    <div class="section__inner">
+      <h2 class="section__title">花火だけじゃない。<br>誰かと歩く時間が、思い出になる。</h2>
+      <p class="benefit__text">夜店をのぞきながら歩く時間も、席についてゆったり空を見上げる時間も。<br>とおまちで過ごす夏は、きっと何気ない一日として記憶に残ります。</p>
+    </div>
+  </section>
+
+  <!-- ============ ⑨ お客様の声 ============ -->
+  <section class="section voice" id="voice">
+    <div class="section__inner">
+      <h2 class="section__title">お客様の声</h2>
+
+      <div class="mascot-block mascot-block--experience">
+        <img src="images/mascot/natsuki_experience.png" alt="マスコットキャラクターなつきがカメラを持って過ごした様子を語っている" class="mascot-block__img">
+        <div class="speech-bubble speech-bubble--experience">
+          <p>私はここで、こんなふうに過ごしたよ。</p>
+        </div>
+      </div>
+
+      <ul class="voice-list">
+        <li class="voice-card">
+          <p class="voice-card__text">正直、花火大会ってどこも混んでて疲れるイメージだったんですが、ここは思ったよりゆったり見られて、ふらっと来てよかったです。</p>
+          <p class="voice-card__attr">27歳女性・会社員（隣県在住）</p>
+        </li>
+        <li class="voice-card">
+          <p class="voice-card__text">商店街の出店を見ながら歩くだけでも楽しくて、花火が始まる前から十分楽しめました。</p>
+          <p class="voice-card__attr">30代男性・カップルで来場</p>
+        </li>
+        <li class="voice-card">
+          <p class="voice-card__text">駅からすぐだったので、思っていたより気軽に行けました。</p>
+          <p class="voice-card__attr">33歳女性・友人グループで来場</p>
+        </li>
+        <li class="voice-card">
+          <p class="voice-card__text">派手さよりも、ゆったりした雰囲気が良くて、また来てもいいかなと思いました。</p>
+          <p class="voice-card__attr">40代女性・家族で来場</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ ⑩ グルメ紹介 ============ -->
+  <section class="section gourmet" id="gourmet">
+    <div class="section__inner">
+      <h2 class="section__title">町のグルメ</h2>
+      <p class="section__lead">夜店だけでなく、商店街のお店でも夏の味を楽しめます。</p>
+
+      <div class="gourmet-grid">
+        <div class="gourmet-card">
+          <img src="images/gourmet/gourmet_washoku1.jpg" alt="老舗そば店の店構え" class="gourmet-card__img">
+          <p class="gourmet-card__genre">和食</p>
+          <h3 class="gourmet-card__name">手打ちそば ときわ</h3>
+        </div>
+        <div class="gourmet-card">
+          <img src="images/gourmet/gourmet_washoku2.jpg" alt="うなぎ料理店の店構え" class="gourmet-card__img">
+          <p class="gourmet-card__genre">和食</p>
+          <h3 class="gourmet-card__name">うなぎ処 川辺</h3>
+        </div>
+        <div class="gourmet-card">
+          <img src="images/gourmet/gourmet_washoku3.jpg" alt="おにぎり専門店の店構え" class="gourmet-card__img">
+          <p class="gourmet-card__genre">和食</p>
+          <h3 class="gourmet-card__name">むすび屋 ほんまち</h3>
+        </div>
+        <div class="gourmet-card">
+          <img src="images/gourmet/gourmet_yoshoku.jpg" alt="洋食店の店構え" class="gourmet-card__img">
+          <p class="gourmet-card__genre">洋食</p>
+          <h3 class="gourmet-card__name">洋食堂 とおまち軒</h3>
+        </div>
+        <div class="gourmet-card">
+          <img src="images/gourmet/gourmet_kissa.jpg" alt="レトロな喫茶店の店構え" class="gourmet-card__img">
+          <p class="gourmet-card__genre">喫茶店</p>
+          <h3 class="gourmet-card__name">喫茶 なぎ</h3>
+        </div>
+        <div class="gourmet-card">
+          <img src="images/gourmet/gourmet_bar.jpg" alt="バー兼カフェの店構え" class="gourmet-card__img">
+          <p class="gourmet-card__genre">バー / カフェ</p>
+          <h3 class="gourmet-card__name">BAR&CAFE 川灯</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ⑪ ギャラリー ============ -->
+  <section class="section gallery" id="gallery">
+    <div class="section__inner">
+      <h2 class="section__title">ギャラリー</h2>
+      <div class="gallery-scroll">
+        <img src="images/gallery/gallery01.jpg" alt="花火が打ち上がる夜空の様子" class="gallery-scroll__img">
+        <img src="images/gallery/gallery02.jpg" alt="川沿いに並ぶ提灯の様子" class="gallery-scroll__img">
+        <img src="images/gallery/gallery03.jpg" alt="商店街の夜店の様子" class="gallery-scroll__img">
+        <img src="images/gallery/gallery04.jpg" alt="花火を見上げる観覧客の様子" class="gallery-scroll__img">
+        <img src="images/gallery/gallery05.jpg" alt="レトロな町並みの夕景" class="gallery-scroll__img">
+        <img src="images/gallery/gallery06.jpg" alt="打ち上げ花火のクローズアップ" class="gallery-scroll__img">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ⑫ FAQ ============ -->
+  <section class="section faq" id="faq">
+    <div class="section__inner">
+      <h2 class="section__title">よくあるご質問</h2>
+
+      <ul class="faq-list">
+        <li class="faq-item faq-item--open">
+          <p class="faq-item__q">予約は必須ですか？</p>
+          <p class="faq-item__a">日帰り観覧は予約不要です。ゆったり座って見たい場合は、有料観覧席のご予約をおすすめします。</p>
+        </li>
+        <li class="faq-item faq-item--open">
+          <p class="faq-item__q">子供連れでも楽しめますか？</p>
+          <p class="faq-item__a">はい。混雑が激しくない規模感のため、お子様連れのご家族にも来場いただいています。</p>
+        </li>
+        <li class="faq-item faq-item--open">
+          <p class="faq-item__q">雨天の場合はどうなりますか？</p>
+          <p class="faq-item__a">小雨決行です。荒天時は翌日に延期となる場合があります。最新情報は当日公式LINEでご案内します。</p>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-item__q faq-item__q--toggle" type="button" aria-expanded="false">
+            アクセス方法は？
+            <span class="faq-item__icon" aria-hidden="true"></span>
+          </button>
+          <p class="faq-item__a">最寄り駅から徒歩約10分です。当日は周辺道路が混雑するため、お車でのご来場はおすすめしておりません。</p>
+        </li>
+        <li class="faq-item">
+          <button class="faq-item__q faq-item__q--toggle" type="button" aria-expanded="false">
+            宿泊先はどうやって決めればいいですか？
+            <span class="faq-item__icon" aria-hidden="true"></span>
+          </button>
+          <p class="faq-item__a">LP内でご紹介している町内の宿泊施設から気気になるところをお選びいただき、公式LINEからお気軽にご相談ください。空室状況やプラン内容について、スタッフが個別にご案内します。</p>
+        </li>
+        <li class="faq-item">
+          <button class="faq-item__q faq-item__q--toggle" type="button" aria-expanded="false">
+            観覧席のキャンセルはできますか？
+            <span class="faq-item__icon" aria-hidden="true"></span>
+          </button>
+          <p class="faq-item__a">有料観覧席は前日17時まで無料でキャンセル可能です。</p>
+        </li>
+        <li class="faq-item">
+          <button class="faq-item__q faq-item__q--toggle" type="button" aria-expanded="false">
+            どのくらい混みますか？
+            <span class="faq-item__icon" aria-hidden="true"></span>
+          </button>
+          <p class="faq-item__a">都市部の大規模花火大会に比べると、混雑は穏やかです。ゆったり過ごしたい方に向いています。</p>
+        </li>
+        <li class="faq-item">
+          <button class="faq-item__q faq-item__q--toggle" type="button" aria-expanded="false">
+            屋台・食事は楽しめますか？
+            <span class="faq-item__icon" aria-hidden="true"></span>
+          </button>
+          <p class="faq-item__a">商店街エリアに多数の出店が並びます。食べ歩きグルメも楽しみのひとつです。</p>
+        </li>
+      </ul>
+
+      <button type="button" class="btn btn--primary btn--full faq__reserve-btn js-open-reservation">観覧席を予約する</button>
+      <a href="#" class="faq__line-link">LINEで相談する</a>
+    </div>
+  </section>
+
+  <!-- ============ ⑬ 最終CTA ============ -->
+  <section class="section final-cta" id="final">
+    <div class="section__inner">
+      <video
+        class="final-cta__mascot"
+        src="videos/natsuki_farewell.mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+        aria-label="マスコットキャラクターなつきが立って見送っている動画"
+      ></video>
+      <h2 class="final-cta__title">今年の夏、<br>とおまちで待ってるね。</h2>
+
+      <ul class="final-cta__reassure">
+        <li>✓ 日帰りは予約不要</li>
+        <li>✓ 有料席は前日17時までキャンセル無料</li>
+        <li>✓ 宿はLINEで気軽に相談OK</li>
+      </ul>
+
+      <div class="final-cta__buttons">
+        <a href="#viewing" class="btn btn--primary btn--large">今年の夏は、とおまちで過ごす</a>
+        <a href="#" class="btn btn--line btn--large">LINEで宿を相談する</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p class="footer__text">とおまち観光協会</p>
+</footer>
+
+<!-- ============ 観覧席予約モーダル ============ -->
+<div class="reservation-modal" id="reservationModal" aria-hidden="true">
+  <div class="reservation-modal__overlay" id="reservationModalOverlay"></div>
+  <div class="reservation-modal__panel" role="dialog" aria-modal="true" aria-labelledby="reservationModalTitle">
+    <button type="button" class="reservation-modal__close" id="reservationModalClose" aria-label="閉じる">×</button>
+
+    <!-- フォーム画面 -->
+    <div class="reservation-modal__body" id="reservationFormView">
+      <h2 class="reservation-modal__title" id="reservationModalTitle">有料観覧席のお申し込み</h2>
+      <p class="reservation-modal__lead">¥1,500（税込）/ 1名・前日17時までキャンセル無料</p>
+
+      <form id="reservationForm" novalidate>
+        <div class="rf-field">
+          <label for="rfName">お名前<span class="rf-required">必須</span></label>
+          <input type="text" id="rfName" name="name" placeholder="例）遠町 花子" autocomplete="name" required>
+          <p class="rf-error" id="rfNameError"></p>
+        </div>
+
+        <div class="rf-field">
+          <label for="rfKana">フリガナ<span class="rf-required">必須</span></label>
+          <input type="text" id="rfKana" name="kana" placeholder="例）トオマチ ハナコ" autocomplete="off" required>
+          <p class="rf-error" id="rfKanaError"></p>
+        </div>
+
+        <div class="rf-field">
+          <label for="rfEmail">メールアドレス<span class="rf-required">必須</span></label>
+          <input type="email" id="rfEmail" name="email" placeholder="例）hanako@example.com" autocomplete="email" required>
+          <p class="rf-error" id="rfEmailError"></p>
+        </div>
+
+        <div class="rf-field">
+          <label for="rfPhone">電話番号<span class="rf-required">必須</span></label>
+          <input type="tel" id="rfPhone" name="phone" placeholder="例）090-1234-5678" autocomplete="tel" required>
+          <p class="rf-error" id="rfPhoneError"></p>
+        </div>
+
+        <div class="rf-field">
+          <label for="rfCount">人数（1〜10名）<span class="rf-required">必須</span></label>
+          <input type="number" id="rfCount" name="count" min="1" max="10" step="1" value="1" required>
+          <p class="rf-error" id="rfCountError"></p>
+        </div>
+
+        <div class="rf-field">
+          <label for="rfNote">備考（任意）</label>
+          <textarea id="rfNote" name="note" rows="3" placeholder="ご要望などございましたらご記入ください"></textarea>
+        </div>
+
+        <div class="rf-field rf-field--checkbox">
+          <label class="rf-checkbox-label">
+            <input type="checkbox" id="rfAgree" name="agree" required>
+            <span><a href="#faq" target="_blank" rel="noopener">キャンセルポリシー</a>に同意する<span class="rf-required">必須</span></span>
+          </label>
+          <p class="rf-error" id="rfAgreeError"></p>
+        </div>
+
+        <p class="rf-submit-error" id="rfSubmitError" role="alert"></p>
+
+        <button type="submit" class="btn btn--primary btn--full" id="rfSubmitBtn">
+          <span id="rfSubmitBtnText">この内容で申し込む</span>
+        </button>
+      </form>
+    </div>
+
+    <!-- 完了画面 -->
+    <div class="reservation-modal__body reservation-modal__body--done" id="reservationDoneView" hidden>
+      <div class="rf-done__icon" aria-hidden="true">✓</div>
+      <h2 class="reservation-modal__title">お申し込みありがとうございます</h2>
+      <p class="rf-done__text">ご入力いただいたメールアドレス宛に確認メールをお送りしました。<br>当日は受付にてお名前をお伝えください。</p>
+      <button type="button" class="btn btn--primary btn--full" id="reservationDoneCloseBtn">閉じる</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
