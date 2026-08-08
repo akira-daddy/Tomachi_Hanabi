@@ -130,19 +130,19 @@
       <h2 class="section__title">こんな夏になってませんか？</h2>
 
       <ul class="pain-list">
-        <li class="pain-list__item">
+        <li class="pain-list__item" data-reveal-index="0">
           <span class="pain-list__icon" aria-hidden="true">
             <img src="images/icons/icon_crowd_pain.png" alt="人混み">
           </span>
           <p class="pain-list__text">花火大会は、どこも人混みで疲れそう。</p>
         </li>
-        <li class="pain-list__item">
+        <li class="pain-list__item" data-reveal-index="1">
           <span class="pain-list__icon" aria-hidden="true">
             <img src="images/icons/icon_repeat_pain.png" alt="毎年同じ">
           </span>
           <p class="pain-list__text">気づけば毎年、同じような夏を過ごしている。</p>
         </li>
-        <li class="pain-list__item">
+        <li class="pain-list__item" data-reveal-index="2">
           <span class="pain-list__icon" aria-hidden="true">
             <img src="images/icons/icon_travel_pain.png" alt="移動疲れ">
           </span>
@@ -151,7 +151,15 @@
       </ul>
 
       <div class="mascot-block mascot-block--worried">
-        <img src="images/mascot/natsuki_worried.png" alt="マスコットキャラクターなつきが困り顔で苦笑いしている" class="mascot-block__img">
+        <video
+          class="mascot-block__img mascot-block__video"
+          src="videos/natsuki_agree.mp4"
+          poster="images/mascot/natsuki_worried.png"
+          muted
+          playsinline
+          loop
+          aria-label="マスコットキャラクターなつきが頷きながら共感している動画"
+        ></video>
         <div class="speech-bubble speech-bubble--worried">
           <p>わかる〜。</p>
         </div>
@@ -161,37 +169,55 @@
 
   <!-- ============ ③ 解決 ============ -->
   <section class="section solution" id="solution">
+    <video
+      class="solution__bg-video js-bg-video"
+      src="videos/bg_solution_movie.mp4"
+      poster="images/bg/bg_solution.png"
+      autoplay
+      muted
+      loop
+      playsinline
+      aria-hidden="true"
+    ></video>
     <div class="solution__bg-overlay" aria-hidden="true"></div>
     <div class="section__inner">
       <h2 class="section__title">とおまちなら、<br>ちょうどいい夏がある。</h2>
 
       <div class="mascot-block mascot-block--relaxed">
-        <img src="images/mascot/natsuki_relaxed.png" alt="マスコットキャラクターなつきが頬杖をついてくつろいでいる" class="mascot-block__img">
+        <video
+          class="mascot-block__img mascot-block__video"
+          src="videos/natsuki_relaxed.mp4"
+          poster="images/mascot/natsuki_relaxed.png"
+          muted
+          playsinline
+          loop
+          aria-label="マスコットキャラクターなつきが頬杖をついて話している動画"
+        ></video>
         <div class="speech-bubble speech-bubble--relaxed">
           <p>混みすぎなくて、ゆっくりできるのがいいんだよね〜。</p>
         </div>
       </div>
 
       <ul class="feature-list">
-        <li class="feature-list__item">
+        <li class="feature-list__item" data-reveal-index="0">
           <span class="feature-list__icon" aria-hidden="true">
             <img src="images/icons/icon_crowd_solution.png" alt="ちょうどいい混雑">
           </span>
           <p class="feature-list__text">混みすぎない、ちょうどいい規模感</p>
         </li>
-        <li class="feature-list__item">
+        <li class="feature-list__item" data-reveal-index="1">
           <span class="feature-list__icon" aria-hidden="true">
             <img src="images/icons/icon_access_solution.png" alt="アクセスしやすい">
           </span>
           <p class="feature-list__text">駅から徒歩圏内でアクセスしやすい</p>
         </li>
-        <li class="feature-list__item">
+        <li class="feature-list__item" data-reveal-index="2">
           <span class="feature-list__icon" aria-hidden="true">
             <img src="images/icons/icon_nightmarket_solution.png" alt="夜店で食べ歩き">
           </span>
           <p class="feature-list__text">商店街の夜店で食べ歩きも楽しめる</p>
         </li>
-        <li class="feature-list__item">
+        <li class="feature-list__item" data-reveal-index="3">
           <span class="feature-list__icon" aria-hidden="true">
             <img src="images/icons/icon_paidseat_solution.png" alt="有料観覧席">
           </span>
@@ -203,6 +229,16 @@
 
   <!-- ============ ④ 観覧のご案内 ============ -->
   <section class="section viewing" id="viewing">
+    <video
+      class="viewing__bg-video js-bg-video"
+      src="videos/bg_invitation_movie.mp4"
+      poster="images/bg/bg_invitation.png"
+      autoplay
+      muted
+      loop
+      playsinline
+      aria-hidden="true"
+    ></video>
     <div class="viewing__bg-overlay" aria-hidden="true"></div>
     <div class="section__inner">
       <h2 class="section__title">観覧のご案内</h2>

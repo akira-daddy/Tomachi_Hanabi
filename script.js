@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initSmoothAnchorScroll();
   initHeroResponsiveMedia();
   initHeroVideo();
+  initEmpathyReveal();
+  initSolutionReveal();
+  initSectionBgVideos();
   initReservationModal();
 });
 
@@ -94,6 +97,156 @@ function initSmoothAnchorScroll() {
       window.scrollTo({ top: targetTop, behavior: 'smooth' });
     });
   });
+}
+
+/* --------------------------------------------------------------------------
+   3-2. 共感セクション（あるあるパネル＋マスコット）の順番出現演出
+   - 3枚のパネルが1枚ずつ現在位置にスライドイン
+   - 3枚目が出たら、下のキャラクター動画が再生され、吹き出しが表示される
+   -------------------------------------------------------------------------- */
+function initEmpathyReveal() {
+  const section = document.getElementById('empathy');
+  if (!section) return;
+
+  const items = Array.from(section.querySelectorAll('.pain-list__item'));
+  const mascotVideo = section.querySelector('.mascot-block__video');
+  const speechBubble = section.querySelector('.mascot-block--worried .speech-bubble');
+
+  if (!items.length) return;
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const revealMascot = () => {
+    if (mascotVideo) {
+      mascotVideo.currentTime = 0;
+      mascotVideo.play().catch(() => {});
+    }
+    if (speechBubble) speechBubble.classList.add('is-visible');
+  };
+
+  const runSequence = () => {
+    if (prefersReducedMotion) {
+      items.forEach((item) => item.classList.add('is-visible'));
+      revealMascot();
+      return;
+    }
+
+    const staggerMs = 320;
+    const mascotDelayAfterLast = 550;
+
+    items.forEach((item, index) => {
+      window.setTimeout(() => {
+        item.classList.add('is-visible');
+
+        // 3枚目（最後）のパネルが表示されたタイミングでキャラクターを動かす
+        if (index === items.length - 1) {
+          window.setTimeout(revealMascot, mascotDelayAfterLast);
+        }
+      }, index * staggerMs);
+    });
+  };
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        runSequence();
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.35 });
+
+  observer.observe(section);
+}
+
+/* --------------------------------------------------------------------------
+   3-3. 解決セクション（特徴パネル＋マスコット）の順番出現演出
+   - 4枚のパネルが1枚ずつゆっくり大きくなって現在の位置に配置
+   - 最後のパネルが出たら、キャラクターが口パクし、吹き出しが表示される
+   -------------------------------------------------------------------------- */
+function initSolutionReveal() {
+  const section = document.getElementById('solution');
+  if (!section) return;
+
+  const items = Array.from(section.querySelectorAll('.feature-list__item'));
+  const mascotVideo = section.querySelector('.mascot-block__video');
+  const speechBubble = section.querySelector('.mascot-block--relaxed .speech-bubble');
+
+  if (!items.length) return;
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const revealMascot = () => {
+    if (mascotVideo) {
+      mascotVideo.currentTime = 0;
+      mascotVideo.play().catch(() => {});
+    }
+    if (speechBubble) speechBubble.classList.add('is-visible');
+  };
+
+  const runSequence = () => {
+    if (prefersReducedMotion) {
+      items.forEach((item) => item.classList.add('is-visible'));
+      revealMascot();
+      return;
+    }
+
+    const staggerMs = 320;
+    const mascotDelayAfterLast = 550;
+
+    items.forEach((item, index) => {
+      window.setTimeout(() => {
+        item.classList.add('is-visible');
+
+        // 最後（4枚目）のパネルが表示されたタイミングでキャラクターを動かす
+        if (index === items.length - 1) {
+          window.setTimeout(revealMascot, mascotDelayAfterLast);
+        }
+      }, index * staggerMs);
+    });
+  };
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        runSequence();
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.35 });
+
+  observer.observe(section);
+}
+
+/* --------------------------------------------------------------------------
+   3-4. セクション背景動画（解決／観覧のご案内）の再生制御
+   - 画面外に出たら一時停止（バッテリー・パフォーマンス対策）
+   - モーション低減設定のユーザーには再生せず、posterの静止画のみ表示
+   -------------------------------------------------------------------------- */
+function initSectionBgVideos() {
+  const videos = document.querySelectorAll('.js-bg-video');
+  if (!videos.length) return;
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (prefersReducedMotion) {
+    videos.forEach((video) => {
+      video.pause();
+      video.removeAttribute('autoplay');
+    });
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.play().catch(() => {});
+      } else {
+        entry.target.pause();
+      }
+    });
+  }, { threshold: 0 });
+
+  videos.forEach((video) => observer.observe(video));
 }
 
 /* --------------------------------------------------------------------------
